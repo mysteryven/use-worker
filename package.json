@@ -1,5 +1,5 @@
 {
-  "name": "ts-react-lib-menorepo",
+  "name": "use-worker-like-request-menorepo",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

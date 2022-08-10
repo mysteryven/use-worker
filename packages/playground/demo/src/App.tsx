@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import { sum, Button } from 'ts-react-lib'
+import { sum, Button } from 'use-worker-like-request'
 
 function App() {
   const [count, setCount] = useState(0)
