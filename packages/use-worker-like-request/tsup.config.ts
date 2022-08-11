@@ -1,8 +1,7 @@
 import { defineConfig } from 'tsup'
-import path from 'path'
 
 export default defineConfig({
-    entry: ['./src/index.tsx'],
+    entry: ['./src/index.ts'],
     format: ['esm'],
     dts: true,
     external: ['react', 'react-dom'],

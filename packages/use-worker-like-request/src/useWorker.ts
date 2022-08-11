@@ -1,41 +1,27 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useCallback } from "react";
 
-interface Opts<T> {
-    manual: boolean;
-    input?: T
-}
-
-interface WorkerResultState<T, S> {
-    data: T,
-    run:  S extends true ? () => void : never,
-}
-
-export default function useWorker<T, R>(worker: Worker, shouldManual: boolean)  {
-    const [data, setData] = useState<T>();
-
-    function run() {
-        if (!shouldManual) {
-            return
-        }
-    }
+export default function useWorker<T, R>(createWorker: () => Worker) {
+    const createWorkerRef = useRef<() => Worker>(createWorker);
 
     useEffect(() => {
-        worker.addEventListener('message', (e) => {
-            console.log(e.data);
-        })
-        worker.addEventListener('error', (e) => {
-            console.log(e)
-        })
-        worker.addEventListener('messageerror', (e) => {
-            console.log(e)
-        })
+        createWorkerRef.current = createWorker;
+    })
 
-        return () => {
-            worker.terminate();
-        }
-    }, [worker])
 
-    return {
-        data,
-    }
+    const workerRunner = useCallback(() => {
+        const worker = createWorkerRef.current();
+
+        return new Promise((resolve, reject) => {
+            worker.addEventListener('message', ({ data }) => {
+                resolve(data)
+            })
+
+            worker.addEventListener("error", (error) => {
+                reject(error)
+            })
+        })
+    }, [])
+
+
+    return workerRunner
 }
