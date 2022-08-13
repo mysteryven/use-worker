@@ -7,7 +7,7 @@ import fibonacci from './fibonacci'
 
 const createWorker = () => new Worker(new URL('./fibonacci', import.meta.url), {
   type: 'module'
-})
+}) 
 
 function App() {
   const [count, setCount] = useState(0)
