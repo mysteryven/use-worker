@@ -1,5 +1,11 @@
 # use-worker-like-request
 
+
+## Install
+```
+pnpm i use-worker-like-request
+```
+
 ## How to use
 
 ```typescript
