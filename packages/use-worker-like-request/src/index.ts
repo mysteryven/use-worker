@@ -1,5 +1,5 @@
-import { exportWorker } from './exportWorker';
-import useWorker from './useWorker';
+import { exportWorker } from './exportWorker'
+import useWorker from './useWorker'
 
 export default useWorker
 

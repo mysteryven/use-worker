@@ -20,6 +20,9 @@ module.exports = {
       '@typescript-eslint',
     ],
     'rules': {
+      'semi': ['error', 'never'],
+      'quotes': ['error', 'single']
     },
-  };
+    'ignorePatterns': ['.eslintrc.js']
+  }
   

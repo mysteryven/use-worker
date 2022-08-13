@@ -1,7 +1,9 @@
-export function exportWorker(fn: Function) {
+export function exportWorker<T extends (...args: any) => any>(fn: T) {
     self.onmessage = function({data}) {
-        const result = fn(data)
+        const result = fn(...data)
 
         self.postMessage(result)
     }
+
+    return fn
 }
