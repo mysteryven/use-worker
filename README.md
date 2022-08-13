@@ -1,32 +1,57 @@
-# use-worker-like-request-starter
+# use-worker-like-request
 
-Inspired by [ts-lib-starter](https://github.com/egoist/ts-lib-starter).
+## How to use
 
-You can use this template to bootstrap a custom hook library、custom component library. 
-## Using this template
+```typescript
+import { exportWorker } from "use-worker-like-request";
 
-- Change directory `packages/use-worker-like-request` with your own lib name
-- Search `use-worker-like-request` and replace it with your custom package name.
+function fibonacci(n: number): number {
+    if (n === 1) {
+        return 1
+    }
 
-If you perfer downloading this template without `.git` folder, you can use degit:
+    if (n === 2) {
+        return 2
+    }
 
-```bash
-npm i degit -g
+    return fibonacci(n - 1) + fibonacci(n - 2)
+}
 
-degit https://github.com/mysteryven/use-worker-like-request-starter.git
+export default exportWorker(fibonacci);
 ```
 
-`pagckages/use-worker-like-request/shim.js` is used to [auto import react](https://github.com/evanw/esbuild/issues/334#issuecomment-711150675). Feel free to delete other files in `src` but not `shim.js`. If you want to change its directory or its name, make sure also change its path in `tsup.config.ts`  
+```typescript
+import React from 'react'
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import './App.css'
+import useWorker from 'use-worker-like-request'
+
+import fibonacci from './fibonacci'
+
+const createWorker = () => new Worker(new URL('./fibonacci', import.meta.url), {
+  type: 'module'
+})
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  const {workerRunner, workerController} = useWorker<typeof fibonacci>(createWorker, {autoTerminate: true})
+
+
+  async function handleClick() {
+    console.log(await workerRunner(10))
+  }
+
+  return (
+    <div className="App">
+      <div>hello world</div>
+      <button onClick={handleClick}>compute</button>
+    </div>
+  )
+}
+
+export default App
+
 
 ```
-inject: ['path/to/shim.js']
-```
-
-## Features
-
-- Manange packages with [pnpm](https://pnpm.js.org/)
-- Bundle with [tsup](https://github.com/egoist/tsup)
-- Test with [vitest](https://vitest.dev)
-- Add demos to show use-case in `packages/playground`
-
-When you push code to Github on branch `main`, It will run test by CI (GitHub action). To skip CI, add `skip-ci` to commit message.
