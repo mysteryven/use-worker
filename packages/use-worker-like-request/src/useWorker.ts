@@ -1,23 +1,39 @@
-import { useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef, useCallback, useState } from 'react'
 
 const PROMISE_RESOLVE = 'resolve'
 const PROMISE_REJECT = 'reject'
 
+export enum WORKER_STATUS {
+    PENDING = 'PENDING',
+    RUNNING = 'RUNNING',
+    SUCCESS = 'SUCCESS',
+    ERROR = 'ERROR',
+    TIME_OUT = 'TIME_OUT',
+}
+
 type CreateWorker = () => Worker
 
-export default function useWorker<R extends (...args: any) => any>(createWorker: () => Worker) {
+const DEFAULT_OPTIONS = {
+    autoTerminate: false
+}
+
+export default function useWorker<R extends (...args: any) => any>(
+    createWorker: () => Worker,
+    options: { autoTerminate?: boolean } = DEFAULT_OPTIONS
+) {
     const createWorkerRef = useRef<CreateWorker>(createWorker)
+    const [workerStatus, _setWorkerStatus] = useState<WORKER_STATUS>(WORKER_STATUS.PENDING)
     const workerRef = useRef<Worker>()
     const isRunningRef = useRef<boolean>(false)
-
     const promiseRef = useRef({
         [PROMISE_RESOLVE]: (value: ReturnType<R>) => { },
         [PROMISE_REJECT]: (error: Error | ErrorEvent) => { }
     })
 
-    useEffect(() => {
-        createWorkerRef.current = createWorker
-    })
+    const setWorkStatus = useCallback((status: WORKER_STATUS) => {
+        isRunningRef.current = status === WORKER_STATUS.RUNNING
+        _setWorkerStatus(status)
+    }, [])
 
     const callWorker = useCallback((...args: Parameters<R>) => {
         return new Promise((resolve, reject) => {
@@ -27,21 +43,41 @@ export default function useWorker<R extends (...args: any) => any>(createWorker:
             }
 
             workerRef.current?.postMessage(args)
-        }) 
+        })
     }, [])
+
+    useEffect(() => {
+        createWorkerRef.current = createWorker
+    })
 
     function generateWorker() {
         const worker = createWorkerRef.current() as Worker
-
         workerRef.current = worker
 
-        worker.addEventListener('message', ({ data }) => {
-            promiseRef.current[PROMISE_RESOLVE](data)
-        })
+        worker.onmessage = ({ data }) => {
+            if (data[0] === WORKER_STATUS.SUCCESS) {
+                promiseRef.current[PROMISE_RESOLVE](data)
+                onWorkEnd(WORKER_STATUS.SUCCESS)
+            } else {
+                promiseRef.current[PROMISE_REJECT](data)
+                onWorkEnd(WORKER_STATUS.ERROR)
+            }
+        }
 
-        worker.addEventListener('error', (error) => {
+        worker.onerror = (error) => {
             promiseRef.current[PROMISE_REJECT](error)
-        })
+            onWorkEnd(WORKER_STATUS.ERROR)
+        }
+    }
+
+    // @ts-ignore
+    function onWorkEnd(workStatus: WORKER_STATUS) {
+        setWorkStatus(workStatus)
+
+        if (options.autoTerminate) {
+            workerRef.current?.terminate()
+            workerRef.current = undefined
+        }
     }
 
     const workerRunner = useCallback((...fnArgs: Parameters<R>) => {
@@ -51,11 +87,15 @@ export default function useWorker<R extends (...args: any) => any>(createWorker:
         }
 
         generateWorker()
-        isRunningRef.current = true
+        setWorkStatus(WORKER_STATUS.RUNNING)
 
         return callWorker(...fnArgs)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    return workerRunner
+    const workerController = {
+        workerStatus
+    }
+
+    return { workerRunner, workerController }
 }

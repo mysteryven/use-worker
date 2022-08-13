@@ -13,13 +13,11 @@ const createWorker = () => new Worker(new URL('./fibonacci', import.meta.url), {
 function App() {
   const [count, setCount] = useState(0)
 
-  const fab = useWorker<typeof fibonacci>(createWorker)
+  const {workerRunner, workerController} = useWorker<typeof fibonacci>(createWorker, {autoTerminate: true})
 
 
   async function handleClick() {
-    const res = await fab(10)
-
-    console.log(res)
+    console.log(await workerRunner(10))
   }
 
   return (
