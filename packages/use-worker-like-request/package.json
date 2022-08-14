@@ -15,8 +15,13 @@
     "prepublishOnly": "pnpm run build",
     "test": "vitest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["react", "react-hooks", "web-worker"],
+  "homepage": "https://github.com/mysteryven/use-worker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mysteryven/use-worker"
+  },
+  "author": "myteryven",
   "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",
