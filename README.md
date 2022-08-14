@@ -1,12 +1,16 @@
 # use-worker-like-request
 
 
+
+> Pay attention: Not use it now, I had trouble with vitest to test web worker, when it solved, I will add tests to this library, and add some features.
+
 ## Install
-```
+
+```bash
 pnpm i use-worker-like-request
 ```
 
-## How to use
+## Usage
 
 ```typescript
 import { exportWorker } from "use-worker-like-request";
@@ -29,10 +33,9 @@ export default exportWorker(fibonacci);
 ```typescript
 import React from 'react'
 import { useState } from 'react'
+import useWorker from 'use-worker-like-request'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import useWorker from 'use-worker-like-request'
-
 import fibonacci from './fibonacci'
 
 const createWorker = () => new Worker(new URL('./fibonacci', import.meta.url), {
@@ -42,8 +45,7 @@ const createWorker = () => new Worker(new URL('./fibonacci', import.meta.url), {
 function App() {
   const [count, setCount] = useState(0)
 
-  const {workerRunner, workerController} = useWorker<typeof fibonacci>(createWorker, {autoTerminate: true})
-
+  const {workerRunner, workerController} = useWorker<typeof fibonacci>(createWorker)
 
   async function handleClick() {
     console.log(await workerRunner(10))
@@ -58,6 +60,31 @@ function App() {
 }
 
 export default App
-
-
 ```
+
+`useWorker` accept second parameter, it can auto terminate when your worker finished (success or fail).
+
+```typescript
+const {
+    workerRunner, 
+    workerController
+} = useWorker<typeof fibonacci>(createWorker, {autoTerminate: true})
+```
+
+And you can manual terminate:
+
+```typescript
+workerController.killWorker()
+```
+
+You can show worker status by reading `workerController.workerStatus`, Its value will be one of :
+
+```typescript
+export enum WORKER_STATUS {
+    PENDING = 'PENDING',
+    RUNNING = 'RUNNING',
+    SUCCESS = 'SUCCESS',
+    ERROR = 'ERROR',
+}
+```
+

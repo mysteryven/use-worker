@@ -75,9 +75,13 @@ export default function useWorker<R extends (...args: any) => any>(
         setWorkStatus(workStatus)
 
         if (options.autoTerminate) {
-            workerRef.current?.terminate()
-            workerRef.current = undefined
+            killWorker()
         }
+    }
+
+    function killWorker() {
+        workerRef.current?.terminate()
+        workerRef.current = undefined
     }
 
     const workerRunner = useCallback((...fnArgs: Parameters<R>) => {
@@ -94,7 +98,8 @@ export default function useWorker<R extends (...args: any) => any>(
     }, [])
 
     const workerController = {
-        workerStatus
+        workerStatus,
+        killWorker
     }
 
     return { workerRunner, workerController }
