@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { renderHook } from '@testing-library/react-hooks'
-import useWorker from '../src/useWorker'
+import useWorker, { WORKER_STATUS } from '../src/useWorker'
 import { defineWebWorker } from './worker.mock'
 
 describe('useWorker', () => {
@@ -28,6 +28,6 @@ describe('useWorker', () => {
     it('should post message to web worker', async () => {
         const { result } = renderHook(() => useWorker(createWorker))
         const value = await result.current.workerRunner(5)
-        expect(value).toBe(8)
+        expect(value).toStrictEqual([WORKER_STATUS.SUCCESS, 8])
     })
 })

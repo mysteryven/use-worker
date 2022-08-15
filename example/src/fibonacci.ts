@@ -1,4 +1,4 @@
-import { exportWorker } from "use-worker-like-request";
+import { exportWorker } from "../../src/index";
 
 function fibonacci(n: number): number  {
     if (n === 1) {
