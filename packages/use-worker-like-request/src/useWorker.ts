@@ -43,7 +43,7 @@ export default function useWorker<R extends (...args: any) => any>(
             }
 
             workerRef.current?.postMessage(args)
-        })
+        }) 
     }, [])
 
     useEffect(() => {
@@ -91,9 +91,8 @@ export default function useWorker<R extends (...args: any) => any>(
         }
 
         generateWorker()
-        setWorkStatus(WORKER_STATUS.RUNNING)
-
-        return callWorker(...fnArgs)
+        setWorkStatus(WORKER_STATUS.RUNNING) 
+        return callWorker(...fnArgs) as ReturnType<R> extends Promise<infer K> ? K : Promise<ReturnType<R>>
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
