@@ -17,7 +17,7 @@ function App() {
 
 
   async function handleClick() {
-    console.log(await workerRunner(10))
+    const ret = await workerRunner(10)
   }
 
   return (

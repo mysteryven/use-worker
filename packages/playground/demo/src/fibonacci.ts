@@ -1,6 +1,6 @@
 import { exportWorker } from "use-worker-like-request";
 
-function fibonacci(n: number): number {
+function fibonacci(n: number): number  {
     if (n === 1) {
         return 1
     }
