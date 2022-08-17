@@ -4,23 +4,29 @@ import './App.css'
 import useWorker from '../../src/index'
 
 import fibonacci from './fibonacci'
+import sum from './sum.work'
 import { WORKER_STATUS } from '../../src/useWorker'
 
 const createWorker = () => new Worker(new URL('./fibonacci', import.meta.url), {
   type: 'module'
 })
 
+// two parameters showcase
+// const createWorker2 = () => new Worker(new URL('./sum.work.ts', import.meta.url), {
+//   type: 'module'
+// })
+
 function App() {
   const [count, setCount] = useState(0)
   const [num, setNum] = useState(0)
 
   const { workerRunner, workerController } = useWorker<typeof fibonacci>(createWorker, { autoTerminate: true })
+  // const { workerRunner: workerRunner } = useWorker<typeof sum>(createWorker2, { autoTerminate: true })
 
   async function handleClick() {
     const ret = await workerRunner(42)
-    if (ret[0] === WORKER_STATUS.SUCCESS) {
-      setNum(ret[1])
-    }
+    // const ret = await workerRunner1(42, 0)
+    setNum(ret)
   }
 
   return (
@@ -44,7 +50,7 @@ function App() {
       </div>
       <div className="card">
         <button onClick={() => setCount((count) => (count + 1))}>
-          setCount in main thread 
+          setCount in main thread
         </button>
         <p>
           result: {count}

@@ -91,3 +91,8 @@ export enum WORKER_STATUS {
 }
 ```
 
+## Preview
+
+```bash
+pnpm example
+```
