@@ -92,8 +92,7 @@ export default function useWorker<R extends (...args: any) => any>(
 
         generateWorker()
         setWorkStatus(WORKER_STATUS.RUNNING)
-
-        return callWorker(...fnArgs)
+        return callWorker(...fnArgs) as ReturnType<R> extends Promise<infer K> ? [WORKER_STATUS, K] : Promise<[WORKER_STATUS, ReturnType<R>]>
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

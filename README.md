@@ -3,7 +3,7 @@
 [![npm version](https://badgen.net/npm/v/use-worker-like-request)](https://npm.im/use-worker-like-request) 
 [![npm downloads](https://badgen.net/npm/dm/use-worker-like-request)](https://npm.im/use-worker-like-request)
 
-
+[online demo](https://stackblitz.com/edit/vitejs-vite-pzvfnq?embed=1&file=src/App.tsx)
 
 > Pay attention: Not use it now, I had trouble with vitest to test web worker, when it solved, I will add tests to this library, and add some features.
 
