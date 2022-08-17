@@ -3,7 +3,7 @@ import { WORKER_STATUS } from './useWorker'
 export default function exportWorker<T extends (...args: any) => any>(fn: T) {
     self.onmessage = async function ({ data }) {
         try {
-            const r = fn(data)
+            const r = fn(...data)
             if (r && r[Symbol.asyncIterator]) {
                 for await (const i of r) (self.postMessage)([WORKER_STATUS.SUCCESS, i])
             } else if (r && r[Symbol.iterator]) {

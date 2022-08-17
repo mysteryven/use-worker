@@ -28,6 +28,6 @@ describe('useWorker', () => {
     it('should post message to web worker', async () => {
         const { result } = renderHook(() => useWorker(createWorker))
         const value = await result.current.workerRunner(5)
-        expect(value).toStrictEqual([WORKER_STATUS.SUCCESS, 8])
+        expect(value).toStrictEqual(8)
     })
 })

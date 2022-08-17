@@ -56,10 +56,10 @@ export default function useWorker<R extends (...args: any) => any>(
 
         worker.onmessage = ({ data }) => {
             if (data[0] === WORKER_STATUS.SUCCESS) {
-                promiseRef.current[PROMISE_RESOLVE](data)
+                promiseRef.current[PROMISE_RESOLVE](data[1])
                 onWorkEnd(WORKER_STATUS.SUCCESS)
             } else {
-                promiseRef.current[PROMISE_REJECT](data)
+                promiseRef.current[PROMISE_REJECT](data[1])
                 onWorkEnd(WORKER_STATUS.ERROR)
             }
         }
@@ -92,7 +92,7 @@ export default function useWorker<R extends (...args: any) => any>(
 
         generateWorker()
         setWorkStatus(WORKER_STATUS.RUNNING)
-        return callWorker(...fnArgs) as ReturnType<R> extends Promise<infer K> ? [WORKER_STATUS, K] : Promise<[WORKER_STATUS, ReturnType<R>]>
+        return callWorker(...fnArgs) as ReturnType<R> extends Promise<infer K> ? K : Promise<ReturnType<R>>
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
