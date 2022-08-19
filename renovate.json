@@ -1,6 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ]
+  "automerge": true,
+  "pinVersions": false,
+  "ignoreUnstable": true,
+  "major": {
+    "automerge": false
+  },
+  "devDependencies": {
+    "automerge": true,
+    "pinVersions": true
+  }
 }
