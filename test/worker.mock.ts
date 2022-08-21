@@ -131,12 +131,12 @@ export function defineWebWorker() {
       invalidates.push(fsPath)
 
       runner.executeFile(fsPath)
-        .then(() => {
-          invalidates.forEach((fsPath) => {
-            // worker should be new every time
-            moduleCache.delete(fsPath)
-            moduleCache.delete(`mock:${fsPath}`)
-          })
+        .then((res) => {
+          debugger
+          console.log(invalidates)
+          let set = new Set<string>()
+          moduleCache.invalidateDepTree(invalidates, set)
+          moduleCache.invalidateDepTree(invalidates.map(i => `mock:${fsPath}`), new Set())
           const q = this.messageQueue
           this.messageQueue = null
           if (q)

@@ -30,4 +30,11 @@ describe('useWorker', () => {
         const value = await result.current.workerRunner(5)
         expect(value).toStrictEqual(8)
     })
+
+    it('should post message to web worker-2', async () => {
+        debugger
+        const { result } = renderHook(() => useWorker(createWorker))
+        const value = await result.current.workerRunner(5)
+        expect(value).toStrictEqual(8)
+    })
 })
