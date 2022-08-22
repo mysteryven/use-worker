@@ -1,4 +1,5 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
+import { clearTimeout } from 'timers'
 
 const PROMISE_RESOLVE = 'resolve'
 const PROMISE_REJECT = 'reject'
@@ -14,12 +15,13 @@ export enum WORKER_STATUS {
 type CreateWorker = () => Worker
 
 const DEFAULT_OPTIONS = {
-    autoTerminate: false
+    autoTerminate: false,
 }
+
 
 export default function useWorker<R extends (...args: any) => any>(
     createWorker: () => Worker,
-    options: { autoTerminate?: boolean } = DEFAULT_OPTIONS
+    options: { autoTerminate?: boolean, timeout?: number } = DEFAULT_OPTIONS
 ) {
     const createWorkerRef = useRef<CreateWorker>(createWorker)
     const [workerStatus, _setWorkerStatus] = useState<WORKER_STATUS>(WORKER_STATUS.PENDING)
@@ -29,6 +31,7 @@ export default function useWorker<R extends (...args: any) => any>(
         [PROMISE_RESOLVE]: (value: ReturnType<R>) => { },
         [PROMISE_REJECT]: (error: Error | ErrorEvent) => { }
     })
+    const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
     const setWorkStatus = useCallback((status: WORKER_STATUS) => {
         isRunningRef.current = status === WORKER_STATUS.RUNNING
@@ -54,7 +57,21 @@ export default function useWorker<R extends (...args: any) => any>(
         const worker = createWorkerRef.current() as Worker
         workerRef.current = worker
 
+        if (options.timeout && options.timeout > 0) {
+            if (timerRef.current) {
+                clearTimeout(timerRef.current)
+            }
+
+            timerRef.current = setTimeout(() => {
+                promiseRef.current[PROMISE_REJECT](new Error(`the worker expect finished in ${options.timeout}ms`))
+                onWorkEnd(WORKER_STATUS.TIME_OUT)
+            })
+        }
+
         worker.onmessage = ({ data }) => {
+            if (workerStatus === WORKER_STATUS.TIME_OUT) {
+                return
+            }
             if (data[0] === WORKER_STATUS.SUCCESS) {
                 promiseRef.current[PROMISE_RESOLVE](data[1])
                 onWorkEnd(WORKER_STATUS.SUCCESS)
@@ -65,6 +82,10 @@ export default function useWorker<R extends (...args: any) => any>(
         }
 
         worker.onerror = (error) => {
+            if (workerStatus === WORKER_STATUS.TIME_OUT) {
+                return
+            }
+
             promiseRef.current[PROMISE_REJECT](error)
             onWorkEnd(WORKER_STATUS.ERROR)
         }
@@ -76,6 +97,11 @@ export default function useWorker<R extends (...args: any) => any>(
 
         if (options.autoTerminate) {
             killWorker()
+        }
+
+        if (timerRef.current) {
+            clearTimeout(timerRef.current)
+            timerRef.current = null
         }
     }
 
