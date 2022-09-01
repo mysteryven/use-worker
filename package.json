@@ -1,12 +1,13 @@
 {
-  "name": "use-worker-like-request",
-  "version": "0.1.0",
+  "name": "use-worker-async",
+  "version": "0.2.0",
   "description": "react hook for use web worker",
   "main": "dist/index.js",
   "module": "./dist/index.mjs",
   "exports": {
     "require": "./dist/index.js",
-    "import": "./dist/index.mjs"
+    "import": "./dist/index.mjs",
+    "types": "./dist/index.d.ts"
   },
   "scripts": {
     "start": "tsup --watch",

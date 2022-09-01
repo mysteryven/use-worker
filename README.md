@@ -1,7 +1,7 @@
-# use-worker-like-request
+# use-worker-async
 
-[![npm version](https://badgen.net/npm/v/use-worker-like-request)](https://npm.im/use-worker-like-request) 
-[![npm downloads](https://badgen.net/npm/dm/use-worker-like-request)](https://npm.im/use-worker-like-request)
+[![npm version](https://badgen.net/npm/v/use-worker-async)](https://npm.im/use-worker-async) 
+[![npm downloads](https://badgen.net/npm/dm/use-worker-async)](https://npm.im/use-worker-async)
 
 [online demo](https://stackblitz.com/edit/vitejs-vite-pzvfnq?embed=1&file=src/App.tsx)
 
@@ -10,13 +10,13 @@
 ## Install
 
 ```bash
-pnpm i use-worker-like-request
+pnpm i use-worker-async
 ```
 
 ## Usage
 
 ```typescript
-import { exportWorker } from "use-worker-like-request";
+import { exportWorker } from "use-worker-async";
 
 function fibonacci(n: number): number {
     if (n === 1) {
@@ -36,7 +36,7 @@ export default exportWorker(fibonacci);
 ```typescript
 import React from 'react'
 import { useState } from 'react'
-import useWorker from 'use-worker-like-request'
+import useWorker from 'use-worker-async'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import fibonacci from './fibonacci'
