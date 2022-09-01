@@ -20,10 +20,10 @@ const DEFAULT_OPTIONS = {
 
 
 export default function useWorker<R extends (...args: any) => any>(
-    createWorker: () => Worker,
+    createWorker?: () => Worker,
     options: { autoTerminate?: boolean, timeout?: number } = DEFAULT_OPTIONS
 ) {
-    const createWorkerRef = useRef<CreateWorker>(createWorker)
+    const createWorkerRef = useRef<CreateWorker | undefined>(createWorker)
     const [workerStatus, _setWorkerStatus] = useState<WORKER_STATUS>(WORKER_STATUS.PENDING)
     const workerRef = useRef<Worker>()
     const isRunningRef = useRef<boolean>(false)
@@ -54,6 +54,10 @@ export default function useWorker<R extends (...args: any) => any>(
     })
 
     function generateWorker() {
+        if (!createWorkerRef.current) {
+            return
+        }
+
         const worker = createWorkerRef.current() as Worker
         workerRef.current = worker
 
@@ -113,6 +117,10 @@ export default function useWorker<R extends (...args: any) => any>(
     const workerRunner = useCallback((...fnArgs: Parameters<R>) => {
         if (isRunningRef.current) {
             console.warn('only one worker can be running at a time')
+            return Promise.reject()
+        }
+
+        if (!createWorkerRef.current) {
             return Promise.reject()
         }
 
