@@ -1,5 +1,4 @@
 import { useEffect, useRef, useCallback, useState } from 'react'
-import { clearTimeout } from 'timers'
 
 const PROMISE_RESOLVE = 'resolve'
 const PROMISE_REJECT = 'reject'

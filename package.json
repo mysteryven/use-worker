@@ -1,6 +1,6 @@
 {
   "name": "use-worker-async",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "react hook for use web worker",
   "main": "dist/index.js",
   "module": "./dist/index.mjs",
@@ -17,14 +17,14 @@
     "example": "vite example",
     "test": "vitest"
   },
-  "keywords": ["react", "react-hooks", "web-worker"],
+  "keywords": ["React", "React Hooks", "Web Worker", "Async", "Typescript"],
   "homepage": "https://github.com/mysteryven/use-worker",
   "repository": {
     "type": "git",
     "url": "https://github.com/mysteryven/use-worker"
   },
-  "author": "myteryven",
-  "license": "ISC",
+  "author": "myteryven<mysteryven@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
