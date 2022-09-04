@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@testing-library/react': 13.3.0
+  '@testing-library/react': 13.4.0
   '@testing-library/react-hooks': 8.0.1
   '@types/node': 18.7.14
   '@types/react': 18.0.18
@@ -27,7 +27,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
 
 devDependencies:
-  '@testing-library/react': 13.3.0_biqbaboplfbrettd7655fr4n2y
+  '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@testing-library/react-hooks': 8.0.1_63dfw6rfgd64rl77ptfma4cvt4
   '@types/node': 18.7.14
   '@types/react': 18.0.18
@@ -477,8 +477,8 @@ packages:
       react-error-boundary: 3.1.4_react@18.2.0
     dev: true
 
-  /@testing-library/react/13.3.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-DB79aA426+deFgGSjnf5grczDPiL4taK3hFaa+M5q7q20Kcve9eQottOG5kZ74KEr55v0tU2CQormSSDK87zYQ==}
+  /@testing-library/react/13.4.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-sXOGON+WNTh3MLE9rve97ftaZukN3oNf2KjDy7YTx6hcTO2uuLHuCGynMDhFwGw/jYf4OJ2Qk0i4i79qMNNkyw==}
     engines: {node: '>=12'}
     peerDependencies:
       react: ^18.0.0
