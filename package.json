@@ -39,7 +39,7 @@
     "@vitejs/plugin-react": "2.0.1",
     "@vitest/web-worker": "0.22.1",
     "eslint": "8.23.0",
-    "eslint-plugin-react": "7.31.4",
+    "eslint-plugin-react": "7.31.5",
     "eslint-plugin-react-hooks": "4.6.0",
     "jsdom": "20.0.0",
     "tsup": "6.2.3",
