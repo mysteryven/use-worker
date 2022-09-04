@@ -11,7 +11,7 @@ specifiers:
   '@vitejs/plugin-react': 2.0.1
   '@vitest/web-worker': 0.23.0
   eslint: 8.23.0
-  eslint-plugin-react: 7.31.5
+  eslint-plugin-react: 7.31.6
   eslint-plugin-react-hooks: 4.6.0
   jsdom: 20.0.0
   react: ^18.2.0
@@ -37,7 +37,7 @@ devDependencies:
   '@vitejs/plugin-react': 2.0.1_vite@3.0.9
   '@vitest/web-worker': 0.23.0_vitest@0.22.1
   eslint: 8.23.0
-  eslint-plugin-react: 7.31.5_eslint@8.23.0
+  eslint-plugin-react: 7.31.6_eslint@8.23.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.23.0
   jsdom: 20.0.0
   tsup: 6.2.3_typescript@4.8.2
@@ -1611,8 +1611,8 @@ packages:
       eslint: 8.23.0
     dev: true
 
-  /eslint-plugin-react/7.31.5_eslint@8.23.0:
-    resolution: {integrity: sha512-y7472VAcqns17rsQUk6tQCnqBi+boYjGdYarX022719+wGd1T4U1fOYJ2T2Trd3Od2q5M92e42zJ2uZOGmWamA==}
+  /eslint-plugin-react/7.31.6_eslint@8.23.0:
+    resolution: {integrity: sha512-CXu4eu28sb8Sd2+cyUYsJVyDvpTlaXPG+bOzzpS9IzZKtye96AYX3ZmHQ6ayn/OAIQ/ufDJP8ElPWd63Pepn9w==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
