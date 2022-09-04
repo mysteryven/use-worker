@@ -9,7 +9,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 5.36.1
   '@typescript-eslint/parser': 5.36.1
   '@vitejs/plugin-react': 2.0.1
-  '@vitest/web-worker': 0.22.1
+  '@vitest/web-worker': 0.23.0
   eslint: 8.23.0
   eslint-plugin-react: 7.31.5
   eslint-plugin-react-hooks: 4.6.0
@@ -35,7 +35,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.36.1_lbwfnm54o3pmr3ypeqp3btnera
   '@typescript-eslint/parser': 5.36.1_yqf6kl63nyoq5megxukfnom5rm
   '@vitejs/plugin-react': 2.0.1_vite@3.0.9
-  '@vitest/web-worker': 0.22.1_vitest@0.22.1
+  '@vitest/web-worker': 0.23.0_vitest@0.22.1
   eslint: 8.23.0
   eslint-plugin-react: 7.31.5_eslint@8.23.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.23.0
@@ -685,12 +685,12 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/web-worker/0.22.1_vitest@0.22.1:
-    resolution: {integrity: sha512-M6sKrtVtqVCuBr4jXcngDttD4RLKF3Keqr/SNSCUS+vydOFgfcRJaGfXR4ccN89UmfNP02RJe02RTrkIlvbrmw==}
+  /@vitest/web-worker/0.23.0_vitest@0.22.1:
+    resolution: {integrity: sha512-KZ47zLgM9O6Xrm5cBjP58DnCYYO3grAH9OSFCxF3+Hc4lIAHF2T0MwwTwDH3bPQhaCpF32pML7lNX1Jcw7gCIg==}
     peerDependencies:
       vitest: '*'
     dependencies:
-      vite-node: 0.22.1
+      vite-node: 0.23.0
       vitest: 0.22.1_jsdom@20.0.0
     transitivePeerDependencies:
       - less
@@ -2428,6 +2428,15 @@ packages:
       ufo: 0.8.5
     dev: true
 
+  /mlly/0.5.14:
+    resolution: {integrity: sha512-DgRgNUSX9NIxxCxygX4Xeg9C7GX7OUx1wuQ8cXx9o9LE0e9wrH+OZ9fcnrlEedsC/rtqry3ZhUddC759XD/L0w==}
+    dependencies:
+      acorn: 8.8.0
+      pathe: 0.3.5
+      pkg-types: 0.3.4
+      ufo: 0.8.5
+    dev: true
+
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
     dev: true
@@ -2624,6 +2633,10 @@ packages:
     resolution: {integrity: sha512-YWgqEdxf36R6vcsyj0A+yT/rDRPe0wui4J9gRR7T4whjU5Lx/jZOr75ckEgTNaLVQABAwsrlzHRpIKcCdXAQ5A==}
     dev: true
 
+  /pathe/0.3.5:
+    resolution: {integrity: sha512-grU/QeYP0ChuE5kjU2/k8VtAeODzbernHlue0gTa27+ayGIu3wqYBIPGfP9r5xSqgCgDd4nWrjKXEfxMillByg==}
+    dev: true
+
   /pathval/1.1.1:
     resolution: {integrity: sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==}
     dev: true
@@ -2646,8 +2659,16 @@ packages:
     resolution: {integrity: sha512-6AJcCMnjUQPQv/Wk960w0TOmjhdjbeaQJoSKWRQv9N3rgkessCu6J0Ydsog/nw1MbpnxHuPzYbfOn2KmlZO1FA==}
     dependencies:
       jsonc-parser: 3.1.0
-      mlly: 0.5.12
-      pathe: 0.3.4
+      mlly: 0.5.14
+      pathe: 0.3.5
+    dev: true
+
+  /pkg-types/0.3.4:
+    resolution: {integrity: sha512-s214f/xkRpwlwVBToWq9Mu0XlU3HhZMYCnr2var8+jjbavBHh/VCh4pBLsJW29rJ//B1jb4HlpMIaNIMH+W2/w==}
+    dependencies:
+      jsonc-parser: 3.1.0
+      mlly: 0.5.14
+      pathe: 0.3.5
     dev: true
 
   /postcss-load-config/3.1.4:
@@ -3191,6 +3212,23 @@ packages:
     dependencies:
       debug: 4.3.4
       mlly: 0.5.12
+      pathe: 0.2.0
+      vite: 3.0.9
+    transitivePeerDependencies:
+      - less
+      - sass
+      - stylus
+      - supports-color
+      - terser
+    dev: true
+
+  /vite-node/0.23.0:
+    resolution: {integrity: sha512-anoezAl62eUs1H0sMDmm6dFA2az+5zqeBo07pYgqZ+xLOlXd6Yliheohcl4g2dZzLcTKjYhH5oKiQrSEtrMXzA==}
+    engines: {node: '>=v14.16.0'}
+    hasBin: true
+    dependencies:
+      debug: 4.3.4
+      mlly: 0.5.14
       pathe: 0.2.0
       vite: 3.0.9
     transitivePeerDependencies:
