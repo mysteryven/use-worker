@@ -9,5 +9,6 @@
   "devDependencies": {
     "automerge": true,
     "pinVersions": true
-  }
+  },
+  "schedule": "on friday"
 }
