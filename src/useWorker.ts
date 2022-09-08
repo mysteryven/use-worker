@@ -68,7 +68,7 @@ export default function useWorker<R extends (...args: any) => any>(
             timerRef.current = setTimeout(() => {
                 promiseRef.current[PROMISE_REJECT](new Error(`the worker expect finished in ${options.timeout}ms`))
                 onWorkEnd(WORKER_STATUS.TIME_OUT)
-            })
+            }, options.timeout)
         }
 
         worker.onmessage = ({ data }) => {
@@ -111,6 +111,12 @@ export default function useWorker<R extends (...args: any) => any>(
     function killWorker() {
         workerRef.current?.terminate()
         workerRef.current = undefined
+        promiseRef.current = {
+            [PROMISE_RESOLVE]: (value: ReturnType<R>) => { },
+            [PROMISE_REJECT]: (error: Error | ErrorEvent) => { }
+        }
+
+        setWorkStatus(WORKER_STATUS.PENDING)
     }
 
     const workerRunner = useCallback((...fnArgs: Parameters<R>) => {
@@ -125,7 +131,7 @@ export default function useWorker<R extends (...args: any) => any>(
 
         generateWorker()
         setWorkStatus(WORKER_STATUS.RUNNING)
-        return callWorker(...fnArgs) as ReturnType<R> extends Promise<infer K> ? K : Promise<ReturnType<R>>
+        return callWorker(...fnArgs) as ReturnType<R> extends Promise<infer K> ? Promise<K> : Promise<ReturnType<R>>
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
