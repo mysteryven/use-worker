@@ -20,7 +20,7 @@ specifiers:
   typescript: 4.8.3
   vite: 3.1.1
   vite-node: 0.23.2
-  vitest: 0.23.1
+  vitest: 0.23.2
 
 dependencies:
   react: 18.2.0
@@ -35,7 +35,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.36.2_wxqvmnl3i4rbvz4ixyoiufmx3e
   '@typescript-eslint/parser': 5.36.2_irgkl5vooow2ydyo6aokmferha
   '@vitejs/plugin-react': 2.1.0_vite@3.1.1
-  '@vitest/web-worker': 0.23.2_vitest@0.23.1
+  '@vitest/web-worker': 0.23.2_vitest@0.23.2
   eslint: 8.23.1
   eslint-plugin-react: 7.31.8_eslint@8.23.1
   eslint-plugin-react-hooks: 4.6.0_eslint@8.23.1
@@ -44,7 +44,7 @@ devDependencies:
   typescript: 4.8.3
   vite: 3.1.1
   vite-node: 0.23.2
-  vitest: 0.23.1_jsdom@20.0.0
+  vitest: 0.23.2_jsdom@20.0.0
 
 packages:
 
@@ -694,13 +694,13 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/web-worker/0.23.2_vitest@0.23.1:
+  /@vitest/web-worker/0.23.2_vitest@0.23.2:
     resolution: {integrity: sha512-y6gu2ypaXNT+8WkUaqf3s/O/dyn05zeDSvWZeA8twvBmI5kJbKWUpeBK3nYpvPdhRGckoqzTTpZOXCMRhJKM1Q==}
     peerDependencies:
       vitest: '*'
     dependencies:
       vite-node: 0.23.2
-      vitest: 0.23.1_jsdom@20.0.0
+      vitest: 0.23.2_jsdom@20.0.0
     transitivePeerDependencies:
       - less
       - sass
@@ -3043,13 +3043,12 @@ packages:
       any-promise: 1.3.0
     dev: true
 
-  /tinybench/2.1.4:
-    resolution: {integrity: sha512-NFWIw2Gg7EUPdeE8nL1Dc7AMVlk7sOr2PmSNKVuQrZ0YwTOFoshPQ+hcLrgnhK8dTP3FWMCJaf4N+/hXp6lKPw==}
-    engines: {node: '>=16.0.0'}
+  /tinybench/2.1.5:
+    resolution: {integrity: sha512-ak+PZZEuH3mw6CCFOgf5S90YH0MARnZNhxjhjguAmoJimEMAJuNip/rJRd6/wyylHItomVpKTzZk9zrhTrQCoQ==}
     dev: true
 
-  /tinypool/0.2.4:
-    resolution: {integrity: sha512-Vs3rhkUH6Qq1t5bqtb816oT+HeJTXfwt2cbPH17sWHIYKTotQIFPk3tf2fgqRrVyMDVOc1EnPgzIxfIulXVzwQ==}
+  /tinypool/0.3.0:
+    resolution: {integrity: sha512-NX5KeqHOBZU6Bc0xj9Vr5Szbb1j8tUHIeD18s41aDJaPeC5QTdEhK0SpdpUrZlj2nv5cctNcSjaKNanXlfcVEQ==}
     engines: {node: '>=14.0.0'}
     dev: true
 
@@ -3260,8 +3259,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.23.1_jsdom@20.0.0:
-    resolution: {integrity: sha512-kn9pG+h6VA3yj/xRvwgLKEd33rOlzMqJEg3tl5HSm3WUPlkY1Lr1FK8RN1uIqVKvFxmz6HGU3EQW+xW2kazRkQ==}
+  /vitest/0.23.2_jsdom@20.0.0:
+    resolution: {integrity: sha512-kTBKp3ROPDkYC+x2zWt4znkDtnT08W1FQ6ngRFuqxpBGNuNVS+eWZKfffr8y2JGvEzZ9EzMAOcNaiqMj/FZqMw==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -3290,8 +3289,8 @@ packages:
       jsdom: 20.0.0
       local-pkg: 0.4.2
       strip-literal: 0.4.0
-      tinybench: 2.1.4
-      tinypool: 0.2.4
+      tinybench: 2.1.5
+      tinypool: 0.3.0
       tinyspy: 1.0.2
       vite: 3.1.1
     transitivePeerDependencies:
