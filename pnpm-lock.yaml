@@ -9,7 +9,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 5.37.0
   '@typescript-eslint/parser': 5.37.0
   '@vitejs/plugin-react': 2.1.0
-  '@vitest/web-worker': 0.23.2
+  '@vitest/web-worker': 0.23.4
   eslint: 8.23.1
   eslint-plugin-react: 7.31.8
   eslint-plugin-react-hooks: 4.6.0
@@ -35,7 +35,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.37.0_22c5fnooleyfkzrkkgdmel5kmi
   '@typescript-eslint/parser': 5.37.0_irgkl5vooow2ydyo6aokmferha
   '@vitejs/plugin-react': 2.1.0_vite@3.1.1
-  '@vitest/web-worker': 0.23.2_vitest@0.23.2
+  '@vitest/web-worker': 0.23.4_vitest@0.23.2
   eslint: 8.23.1
   eslint-plugin-react: 7.31.8_eslint@8.23.1
   eslint-plugin-react-hooks: 4.6.0_eslint@8.23.1
@@ -694,12 +694,12 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/web-worker/0.23.2_vitest@0.23.2:
-    resolution: {integrity: sha512-y6gu2ypaXNT+8WkUaqf3s/O/dyn05zeDSvWZeA8twvBmI5kJbKWUpeBK3nYpvPdhRGckoqzTTpZOXCMRhJKM1Q==}
+  /@vitest/web-worker/0.23.4_vitest@0.23.2:
+    resolution: {integrity: sha512-3MITYIXT2JpXKGqozF8/BQBjOBP14BarmPJgXuS8yjUpRO6yzBg7b5n1SDXQ98+t7QhDAqIIWa7mBjKQBsIvmA==}
     peerDependencies:
       vitest: '*'
     dependencies:
-      vite-node: 0.23.2
+      vite-node: 0.23.4
       vitest: 0.23.2_jsdom@20.0.0
     transitivePeerDependencies:
       - less
@@ -3217,6 +3217,23 @@ packages:
 
   /vite-node/0.23.2:
     resolution: {integrity: sha512-LRkcAu0oQYNp+2LX84Z8NkYXzISdeLi9NxL8cWgJPxxYcv8Lv9VpqU4kNzAqTIWzgIQFnVkf5mZarcoLgQXInQ==}
+    engines: {node: '>=v14.16.0'}
+    hasBin: true
+    dependencies:
+      debug: 4.3.4
+      mlly: 0.5.14
+      pathe: 0.2.0
+      vite: 3.1.1
+    transitivePeerDependencies:
+      - less
+      - sass
+      - stylus
+      - supports-color
+      - terser
+    dev: true
+
+  /vite-node/0.23.4:
+    resolution: {integrity: sha512-8VuDGwTWIvwPYcbw8ZycMlwAwqCmqZfLdFrDK75+o+6bWYpede58k6AAXN9ioU+icW82V4u1MzkxLVhhIoQ9xA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     dependencies:
