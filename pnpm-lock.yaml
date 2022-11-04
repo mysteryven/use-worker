@@ -13,7 +13,7 @@ specifiers:
   eslint: 8.26.0
   eslint-plugin-react: 7.31.10
   eslint-plugin-react-hooks: 4.6.0
-  jsdom: 20.0.1
+  jsdom: 20.0.2
   react: ^18.2.0
   react-dom: ^18.2.0
   tsup: 6.3.0
@@ -39,12 +39,12 @@ devDependencies:
   eslint: 8.26.0
   eslint-plugin-react: 7.31.10_eslint@8.26.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.26.0
-  jsdom: 20.0.1
+  jsdom: 20.0.2
   tsup: 6.3.0_typescript@4.8.4
   typescript: 4.8.4
   vite: 3.2.1
   vite-node: 0.24.3
-  vitest: 0.24.3_jsdom@20.0.1
+  vitest: 0.24.3_jsdom@20.0.2
 
 packages:
 
@@ -702,7 +702,7 @@ packages:
       vitest: '*'
     dependencies:
       vite-node: 0.24.5
-      vitest: 0.24.3_jsdom@20.0.1
+      vitest: 0.24.3_jsdom@20.0.2
     transitivePeerDependencies:
       - less
       - sass
@@ -2023,8 +2023,8 @@ packages:
       argparse: 2.0.1
     dev: true
 
-  /jsdom/20.0.1:
-    resolution: {integrity: sha512-pksjj7Rqoa+wdpkKcLzQRHhJCEE42qQhl/xLMUKHgoSejaKOdaXEAnqs6uDNwMl/fciHTzKeR8Wm8cw7N+g98A==}
+  /jsdom/20.0.2:
+    resolution: {integrity: sha512-AHWa+QO/cgRg4N+DsmHg1Y7xnz+8KU3EflM0LVDTdmrYOc1WWTSkOjtpUveQH+1Bqd5rtcVnb/DuxV/UjDO4rA==}
     engines: {node: '>=14'}
     peerDependencies:
       canvas: ^2.5.0
@@ -3082,7 +3082,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.24.3_jsdom@20.0.1:
+  /vitest/0.24.3_jsdom@20.0.2:
     resolution: {integrity: sha512-aM0auuPPgMSstWvr851hB74g/LKaKBzSxcG3da7ejfZbx08Y21JpZmbmDYrMTCGhVZKqTGwzcnLMwyfz2WzkhQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -3109,7 +3109,7 @@ packages:
       '@types/node': 18.11.9
       chai: 4.3.6
       debug: 4.3.4
-      jsdom: 20.0.1
+      jsdom: 20.0.2
       local-pkg: 0.4.2
       strip-literal: 0.4.2
       tinybench: 2.3.0
