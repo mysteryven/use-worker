@@ -46,7 +46,7 @@
     "tsup": "6.4.0",
     "typescript": "4.8.4",
     "vite": "3.2.3",
-    "vite-node": "0.24.5",
+    "vite-node": "0.25.1",
     "vitest": "0.24.5"
   }
 }
