@@ -16,7 +16,7 @@ specifiers:
   jsdom: 20.0.2
   react: ^18.2.0
   react-dom: ^18.2.0
-  tsup: 6.4.0
+  tsup: 6.5.0
   typescript: 4.8.4
   vite: 3.2.4
   vite-node: 0.25.2
@@ -40,7 +40,7 @@ devDependencies:
   eslint-plugin-react: 7.31.10_eslint@8.27.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.27.0
   jsdom: 20.0.2
-  tsup: 6.4.0_typescript@4.8.4
+  tsup: 6.5.0_typescript@4.8.4
   typescript: 4.8.4
   vite: 3.2.4_@types+node@18.11.9
   vite-node: 0.25.2_@types+node@18.11.9
@@ -2914,8 +2914,8 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tsup/6.4.0_typescript@4.8.4:
-    resolution: {integrity: sha512-4OlbqIK/SF+cJp0mMqPM2pKULvgj/1S2Gm3I1aFoFGIryUOyIqPZBoqKkqVQT6uFtWJ5AHftIv0riXKfHox1zQ==}
+  /tsup/6.5.0_typescript@4.8.4:
+    resolution: {integrity: sha512-36u82r7rYqRHFkD15R20Cd4ercPkbYmuvRkz3Q1LCm5BsiFNUgpo36zbjVhCOgvjyxNBWNKHsaD5Rl8SykfzNA==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
