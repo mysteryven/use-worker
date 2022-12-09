@@ -47,6 +47,6 @@
     "typescript": "4.9.4",
     "vite": "3.2.5",
     "vite-node": "0.25.6",
-    "vitest": "0.25.3"
+    "vitest": "0.25.6"
   }
 }
