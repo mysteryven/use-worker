@@ -10,5 +10,5 @@
     "automerge": true,
     "pinVersions": true
   },
-  "schedule": "on friday"
+  "schedule": "every 3 months on the first day of the month"
 }
