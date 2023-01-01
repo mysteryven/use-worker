@@ -9,7 +9,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 5.47.1
   '@typescript-eslint/parser': 5.47.1
   '@vitejs/plugin-react': 3.0.0
-  '@vitest/web-worker': 0.26.2
+  '@vitest/web-worker': 0.26.3
   eslint: 8.31.0
   eslint-plugin-react: 7.31.11
   eslint-plugin-react-hooks: 4.6.0
@@ -35,7 +35,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.47.1_axni7f4fgvh6tlufnh6hwgsifq
   '@typescript-eslint/parser': 5.47.1_iukboom6ndih5an6iafl45j2fe
   '@vitejs/plugin-react': 3.0.0_vite@4.0.3
-  '@vitest/web-worker': 0.26.2_dmrzslb74myugdevejdzom4x5e
+  '@vitest/web-worker': 0.26.3_dmrzslb74myugdevejdzom4x5e
   eslint: 8.31.0
   eslint-plugin-react: 7.31.11_eslint@8.31.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.31.0
@@ -843,13 +843,13 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/web-worker/0.26.2_dmrzslb74myugdevejdzom4x5e:
-    resolution: {integrity: sha512-Cq4StoaE2ITIXigJCOant22idI5X4udgQluLCmGmoUPQKZrDmHGVAcZB9KP+iQ1ckvk0sPemAUIWn0oMGGXu+g==}
+  /@vitest/web-worker/0.26.3_dmrzslb74myugdevejdzom4x5e:
+    resolution: {integrity: sha512-qvgUf0Bn9cFgEH79u3dmrd2VDvRho/i3nu0+hfvfFm7seSwBWTkRkfrsPV+voZgC/vLrv7iqVC7tf6294EhkVA==}
     peerDependencies:
       vitest: '*'
     dependencies:
       debug: 4.3.4
-      vite-node: 0.26.2_@types+node@18.11.18
+      vite-node: 0.26.3_@types+node@18.11.18
       vitest: 0.26.2_jsdom@20.0.3
     transitivePeerDependencies:
       - '@types/node'
@@ -3243,6 +3243,27 @@ packages:
 
   /vite-node/0.26.2_@types+node@18.11.18:
     resolution: {integrity: sha512-4M/zlatItZAyvrQG+82zQBhgDjRZRhVJYFW4T9wcAKh7eMmSiPOVSeI5zsV9UzHXgCcIDKX0o0r3s4OxExTHqg==}
+    engines: {node: '>=v14.16.0'}
+    hasBin: true
+    dependencies:
+      debug: 4.3.4
+      mlly: 1.0.0
+      pathe: 0.2.0
+      source-map: 0.6.1
+      source-map-support: 0.5.21
+      vite: 4.0.3_@types+node@18.11.18
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+    dev: true
+
+  /vite-node/0.26.3_@types+node@18.11.18:
+    resolution: {integrity: sha512-Te2bq0Bfvq6XiO718I+1EinMjpNYKws6SNHKOmVbILAQimKoZKDd+IZLlkaYcBXPpK3HFe2U80k8Zw+m3w/a2w==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     dependencies:
