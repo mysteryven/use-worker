@@ -9,7 +9,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 5.47.1
   '@typescript-eslint/parser': 5.47.1
   '@vitejs/plugin-react': 2.2.0
-  '@vitest/web-worker': 0.25.6
+  '@vitest/web-worker': 0.26.2
   eslint: 8.31.0
   eslint-plugin-react: 7.31.11
   eslint-plugin-react-hooks: 4.6.0
@@ -35,7 +35,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.47.1_axni7f4fgvh6tlufnh6hwgsifq
   '@typescript-eslint/parser': 5.47.1_iukboom6ndih5an6iafl45j2fe
   '@vitejs/plugin-react': 2.2.0_vite@3.2.5
-  '@vitest/web-worker': 0.25.6_dmrzslb74myugdevejdzom4x5e
+  '@vitest/web-worker': 0.26.2_dmrzslb74myugdevejdzom4x5e
   eslint: 8.31.0
   eslint-plugin-react: 7.31.11_eslint@8.31.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.31.0
@@ -697,12 +697,13 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/web-worker/0.25.6_dmrzslb74myugdevejdzom4x5e:
-    resolution: {integrity: sha512-ZNabbYkczer2dH7RgLCgYFGdrCpDC4Kgt7s92X59fuXOa4/S6EBi65+/yuAHgD4UdhDY7+QKas6Rb4yogEbVeQ==}
+  /@vitest/web-worker/0.26.2_dmrzslb74myugdevejdzom4x5e:
+    resolution: {integrity: sha512-Cq4StoaE2ITIXigJCOant22idI5X4udgQluLCmGmoUPQKZrDmHGVAcZB9KP+iQ1ckvk0sPemAUIWn0oMGGXu+g==}
     peerDependencies:
       vitest: '*'
     dependencies:
-      vite-node: 0.25.6_@types+node@18.11.18
+      debug: 4.3.4
+      vite-node: 0.26.2_@types+node@18.11.18
       vitest: 0.26.2_jsdom@20.0.3
     transitivePeerDependencies:
       - '@types/node'
@@ -3060,27 +3061,6 @@ packages:
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
-    dev: true
-
-  /vite-node/0.25.6_@types+node@18.11.18:
-    resolution: {integrity: sha512-xwmZ4lVpqfKTCKZRt4vJflGIA4kEsClfGSWZijNqyORnAl1EvL/8USLGEHADe/NSjkwiEJoVQvZu0JQXpo+rQA==}
-    engines: {node: '>=v14.16.0'}
-    hasBin: true
-    dependencies:
-      debug: 4.3.4
-      mlly: 1.0.0
-      pathe: 0.2.0
-      source-map: 0.6.1
-      source-map-support: 0.5.21
-      vite: 3.2.5_@types+node@18.11.18
-    transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
     dev: true
 
   /vite-node/0.26.2_@types+node@18.11.18:
