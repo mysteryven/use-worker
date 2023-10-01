@@ -4,7 +4,7 @@ specifiers:
   '@testing-library/react': 14.0.0
   '@testing-library/react-hooks': 8.0.1
   '@types/node': 20.3.3
-  '@types/react': 18.2.14
+  '@types/react': 18.2.23
   '@types/react-dom': 18.2.6
   '@typescript-eslint/eslint-plugin': 5.60.1
   '@typescript-eslint/parser': 5.60.1
@@ -28,9 +28,9 @@ dependencies:
 
 devDependencies:
   '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
-  '@testing-library/react-hooks': 8.0.1_qzycrpzqvmvb7wd2jdibmpq2cy
+  '@testing-library/react-hooks': 8.0.1_7xd7ir5nhcoi7hkxcipzh5svmq
   '@types/node': 20.3.3
-  '@types/react': 18.2.14
+  '@types/react': 18.2.23
   '@types/react-dom': 18.2.6
   '@typescript-eslint/eslint-plugin': 5.60.1_ym2jrkzuvzkk7oygzaqut3jowu
   '@typescript-eslint/parser': 5.60.1_c6scop6gobf6637sntyzfiffg4
@@ -616,7 +616,7 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@testing-library/react-hooks/8.0.1_qzycrpzqvmvb7wd2jdibmpq2cy:
+  /@testing-library/react-hooks/8.0.1_7xd7ir5nhcoi7hkxcipzh5svmq:
     resolution: {integrity: sha512-Aqhl2IVmLt8IovEVarNDFuJDVWVvhnr9/GCU6UUnrYXwgDFF9h2L2o2P9KBni1AST5sT6riAyoukFLyjQUgD/g==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -633,7 +633,7 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.18.9
-      '@types/react': 18.2.14
+      '@types/react': 18.2.23
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-error-boundary: 3.1.4_react@18.2.0
@@ -687,11 +687,11 @@ packages:
   /@types/react-dom/18.2.6:
     resolution: {integrity: sha512-2et4PDvg6PVCyS7fuTc4gPoksV58bW0RwSxWKcPRcHZf0PRUGq03TKcD/rUHe3azfV6/5/biUBJw+HhCQjaP0A==}
     dependencies:
-      '@types/react': 18.2.14
+      '@types/react': 18.2.23
     dev: true
 
-  /@types/react/18.2.14:
-    resolution: {integrity: sha512-A0zjq+QN/O0Kpe30hA1GidzyFjatVvrpIvWLxD+xv67Vt91TWWgco9IvrJBkeyHm1trGaFS/FSGqPlhyeZRm0g==}
+  /@types/react/18.2.23:
+    resolution: {integrity: sha512-qHLW6n1q2+7KyBEYnrZpcsAmU/iiCh9WGCKgXvMxx89+TYdJWRjZohVIo9XTcoLhfX3+/hP0Pbulu3bCZQ9PSA==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
