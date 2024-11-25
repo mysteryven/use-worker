@@ -19,7 +19,7 @@ specifiers:
   tsup: 6.7.0
   typescript: 4.9.5
   vite: 4.5.5
-  vite-node: 0.34.6
+  vite-node: 0.34.7
   vitest: 0.26.3
 
 dependencies:
@@ -43,7 +43,7 @@ devDependencies:
   tsup: 6.7.0_typescript@4.9.5
   typescript: 4.9.5
   vite: 4.5.5_@types+node@20.8.0
-  vite-node: 0.34.6_@types+node@20.8.0
+  vite-node: 0.34.7_@types+node@20.8.0
   vitest: 0.26.3_jsdom@20.0.3
 
 packages:
@@ -3752,8 +3752,8 @@ packages:
       - terser
     dev: true
 
-  /vite-node/0.34.6_@types+node@20.8.0:
-    resolution: {integrity: sha512-nlBMJ9x6n7/Amaz6F3zJ97EBwR2FkzhBRxF5e+jE6LA3yi6Wtc2lyTij1OnDMIr34v5g/tVQtsVAzhT0jc5ygA==}
+  /vite-node/0.34.7_@types+node@20.8.0:
+    resolution: {integrity: sha512-0Yzb96QzHmqIKIs/x2q/sqG750V/EF6yDkS2p1WjJc1W2bgRSuQjf5vB9HY8h2nVb5j4pO5paS5Npcv3s69YUg==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
     dependencies:
