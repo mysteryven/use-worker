@@ -1,0 +1,53 @@
+name: Issue Labeler
+
+on:
+  pull_request:
+    branches: [master, release]
+    types: [opened, edited, closed]
+
+jobs:
+  additional-labeling:
+    if: github.event.pull_request.merged == true # Only run if the PR is merged
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Extract Linked Issues
+        id: extract_issues
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const prBody = context.payload.pull_request.body || "";
+            const lines = prBody.split("\n").map(line => line.trim());
+            const issueNumbers = lines
+              .filter(line => /^fix|close|bug/i.test(line)) // Lines starting with fix, close, or bug
+              .flatMap(line => [...line.matchAll(/#(\d+)/g)]) // Extract issue numbers starting with #
+              .map(match => match[1]); // Get only the issue number
+            return issueNumbers.join(","); # Return as a comma-separated string
+
+      - name: Set Environment Variable for Issue Numbers
+        run: echo "ISSUE_NUMBERS=${{ steps.extract_issues.outputs.result }}" >> $GITHUB_ENV
+
+      - name: Check and Label Extracted Issues
+        run: |
+          if [[ -n "$ISSUE_NUMBERS" ]]; then
+            echo "Labeling issues: $ISSUE_NUMBERS"
+            node -e "
+            const issueNumbers = '$ISSUE_NUMBERS'.split(',');
+            const label = "done";
+            for (const issueNumber of issueNumbers) {
+              await github.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber.trim(),
+                labels: [label],
+              });
+            }
+            ";
+          else
+            echo "No issues to label.";
+          fi
+        shell: bash
+        env:
+          ISSUE_NUMBERS: ${{ env.ISSUE_NUMBERS }}
