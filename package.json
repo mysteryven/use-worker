@@ -38,7 +38,7 @@
     "@typescript-eslint/eslint-plugin": "6.21.0",
     "@typescript-eslint/parser": "6.7.3",
     "@vitejs/plugin-react": "4.1.0",
-    "@vitest/web-worker": "0.26.3",
+    "@vitest/web-worker": "0.34.7",
     "eslint": "8.50.0",
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-react-hooks": "4.6.0",

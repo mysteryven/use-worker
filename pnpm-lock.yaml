@@ -9,7 +9,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 6.21.0
   '@typescript-eslint/parser': 6.7.3
   '@vitejs/plugin-react': 4.1.0
-  '@vitest/web-worker': 0.26.3
+  '@vitest/web-worker': 0.34.7
   eslint: 8.50.0
   eslint-plugin-react: 7.33.2
   eslint-plugin-react-hooks: 4.6.0
@@ -35,7 +35,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 6.21.0_yb36ehkogwm3p23ki55peuskem
   '@typescript-eslint/parser': 6.7.3_lzjxfqafrx6u5zphy74qutkali
   '@vitejs/plugin-react': 4.1.0_vite@4.5.5
-  '@vitest/web-worker': 0.26.3_25rgxqlaj7boqix6q57zyv7q2q
+  '@vitest/web-worker': 0.34.7_vitest@0.26.3
   eslint: 8.50.0
   eslint-plugin-react: 7.33.2_eslint@8.50.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.50.0
@@ -1157,23 +1157,15 @@ packages:
       - supports-color
     dev: true
 
-  /@vitest/web-worker/0.26.3_25rgxqlaj7boqix6q57zyv7q2q:
-    resolution: {integrity: sha512-qvgUf0Bn9cFgEH79u3dmrd2VDvRho/i3nu0+hfvfFm7seSwBWTkRkfrsPV+voZgC/vLrv7iqVC7tf6294EhkVA==}
+  /@vitest/web-worker/0.34.7_vitest@0.26.3:
+    resolution: {integrity: sha512-/1Jxr03FZchZhWjHP38o/QJIfEvk257ywt/qEKvtHxa2RvWIkv7HBEqSesdQaFlN1GCfouHK6dCmv7H2tyvgCA==}
     peerDependencies:
-      vitest: '*'
+      vitest: '>=0.34.0'
     dependencies:
       debug: 4.3.4
-      vite-node: 0.26.3_@types+node@20.8.0
       vitest: 0.26.3_jsdom@20.0.3
     transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
       - supports-color
-      - terser
     dev: true
 
   /abab/2.0.6:
