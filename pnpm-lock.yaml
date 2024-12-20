@@ -4,7 +4,7 @@ specifiers:
   '@testing-library/react': 14.0.0
   '@testing-library/react-hooks': 8.0.1
   '@types/node': 20.8.0
-  '@types/react': 18.2.24
+  '@types/react': 18.3.18
   '@types/react-dom': 18.2.8
   '@typescript-eslint/eslint-plugin': 6.21.0
   '@typescript-eslint/parser': 6.7.3
@@ -28,9 +28,9 @@ dependencies:
 
 devDependencies:
   '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
-  '@testing-library/react-hooks': 8.0.1_rozludnunfpi5kjcmpzmfi5vca
+  '@testing-library/react-hooks': 8.0.1_oa4dodevmyu3nugibhxxiddvd4
   '@types/node': 20.8.0
-  '@types/react': 18.2.24
+  '@types/react': 18.3.18
   '@types/react-dom': 18.2.8
   '@typescript-eslint/eslint-plugin': 6.21.0_yb36ehkogwm3p23ki55peuskem
   '@typescript-eslint/parser': 6.7.3_lzjxfqafrx6u5zphy74qutkali
@@ -848,7 +848,7 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@testing-library/react-hooks/8.0.1_rozludnunfpi5kjcmpzmfi5vca:
+  /@testing-library/react-hooks/8.0.1_oa4dodevmyu3nugibhxxiddvd4:
     resolution: {integrity: sha512-Aqhl2IVmLt8IovEVarNDFuJDVWVvhnr9/GCU6UUnrYXwgDFF9h2L2o2P9KBni1AST5sT6riAyoukFLyjQUgD/g==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -865,7 +865,7 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.18.9
-      '@types/react': 18.2.24
+      '@types/react': 18.3.18
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-error-boundary: 3.1.4_react@18.2.0
@@ -948,19 +948,14 @@ packages:
   /@types/react-dom/18.2.8:
     resolution: {integrity: sha512-bAIvO5lN/U8sPGvs1Xm61rlRHHaq5rp5N3kp9C+NJ/Q41P8iqjkXSu0+/qu8POsjH9pNWb0OYabFez7taP7omw==}
     dependencies:
-      '@types/react': 18.2.24
+      '@types/react': 18.3.18
     dev: true
 
-  /@types/react/18.2.24:
-    resolution: {integrity: sha512-Ee0Jt4sbJxMu1iDcetZEIKQr99J1Zfb6D4F3qfUWoR1JpInkY1Wdg4WwCyBjL257D0+jGqSl1twBjV8iCaC0Aw==}
+  /@types/react/18.3.18:
+    resolution: {integrity: sha512-t4yC+vtgnkYjNSKlFx1jkAhH8LgTo2N/7Qvi83kdEaUtMDiwpbLAktKDaAMlRcJ5eSxZkH74eEGt1ky31d7kfQ==}
     dependencies:
       '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.2
       csstype: 3.1.0
-    dev: true
-
-  /@types/scheduler/0.16.2:
-    resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
     dev: true
 
   /@types/semver/7.5.3:
